@@ -23,3 +23,12 @@ And path 30
 When method GET
 Then status 200
 * print response
+
+Scenario: pass the user request with headers_Part3
+* configure headers = {Content-Type: 'text/xml;charset=ISO-8859-1', Connection: 'Keep-Alive', User-Agent: 'Mozilla/4.0(compatible;IE;GACv7\. 1\. 5192\. 22378)'}
+
+When url baseUrl+'/public/v2/users/'
+And path 30
+When method GET
+Then status 200
+* print response
